@@ -6,25 +6,28 @@ import { ProfilePage } from "../Profile/ProfilePage";
 import { ResetPassword } from "../ResetPassword/ResetPassword";
 import { CreateNewPassword } from "../CreateNewPassword/CreateNewPassword";
 import { SuperComponents } from "../SuperConponents/SuperComponents"
-import { Login } from "../Login/Login";
+import  Login  from "../Login/Login";
 
 export enum Path {
     Login = "/login",
-    Registration = "/registration",
     Profile = "/profile",
     ResetPassword = "/resetPassword",
     CreateNewPassword = "/createNewPassword",
     SuperComponents = "/superComponents",
     Error404 = "/404",
+    FORGOT_PATH = '/forgot',
+   // Register = "/registration",
+
 }
+export const Register = "/registration"
 
 export const RoutesConst = () => {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<div>Empty page</div>} />
+                <Route path="/" element={<ProfilePage/>} />
                 <Route path={Path.Login} element={<Login />} />
-                <Route path={Path.Registration} element={<Registration />} />
+                <Route path={Register} element={<Registration />} />
                 <Route path={Path.Profile} element={<ProfilePage />} />
                 <Route path={Path.ResetPassword} element={<ResetPassword />} />
                 <Route
