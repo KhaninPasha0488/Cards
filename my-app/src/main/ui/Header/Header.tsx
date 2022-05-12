@@ -33,6 +33,11 @@ let logIsLog = ()=>isLogitIn ? "Log out":"Log in"
                 </NavLink>
             </div>
             <div className={classes.item}>
+                <NavLink to={Path.PacksList} className={getActiveStyle}>
+                    Packs List
+                </NavLink>
+            </div>
+            <div className={classes.item}>
                 <NavLink to={Path.ResetPassword} className={getActiveStyle}>
                     Reset password
                 </NavLink>

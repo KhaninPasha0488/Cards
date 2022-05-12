@@ -7,6 +7,7 @@ import { ResetPassword } from "../ResetPassword/ResetPassword";
 import { CreateNewPassword } from "../CreateNewPassword/CreateNewPassword";
 import { SuperComponents } from "../SuperConponents/SuperComponents"
 import  Login  from "../Login/Login";
+import {Packs} from "../Packs/Packs";
 
 export enum Path {
     Login = "/login",
@@ -17,6 +18,7 @@ export enum Path {
     Error404 = "/404",
     FORGOT_PATH = '/forgot',
    // Register = "/registration",
+    PacksList = '/packs'
 
 }
 export const Register = "/registration"
@@ -29,6 +31,7 @@ export const RoutesConst = () => {
                 <Route path={Path.Login} element={<Login />} />
                 <Route path={Register} element={<Registration />} />
                 <Route path={Path.Profile} element={<ProfilePage />} />
+                <Route path={Path.PacksList} element={<Packs />} />
                 <Route path={Path.ResetPassword} element={<ResetPassword />} />
                 <Route
                     path={Path.CreateNewPassword}
