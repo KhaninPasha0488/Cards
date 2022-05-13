@@ -1,13 +1,13 @@
 import {setAppLoading, setErrorAC, SetErrorActionType, setInitializedAC} from '../bll/appReducer';
 import {authApi, LoginDataType} from '../dal/authApi';
 import {Dispatch} from 'redux';
-// import {
-//     setCardPacksPageCountAC,
-//     setCardsPacksCountFromRangeAC,
-//     setSortPacksValueAC,
-//     setWithMyIdAC
-// } from '../packs/packs-reducer';
-// import {changeLayoutAC, setCardsPageCountAC} from '../cards/cards-reducer';
+import {
+    setCardPacksPageCountAC,
+    setCardsPacksCountFromRangeAC,
+    setSortPacksValueAC,
+    setWithMyIdAC
+} from './packsReducer';
+import {changeLayoutAC, setCardsPageCountAC} from './cardsReducer';
 import {setUserProfile, SetUserProfileType} from './profileReducer';
 
 
@@ -112,14 +112,14 @@ export const logOut = () => (dispatch: Dispatch) => {
                 tokenDeathTime: 0,
                 __v: 0
             }));
-            /*dispatch(setCardPacksPageCountAC(10))
-            dispatch(setCardsPageCountAC(10))
-            dispatch(setCardsPacksCountFromRangeAC([0, 1000]))*/
+             dispatch(setCardPacksPageCountAC(10))
+             dispatch(setCardsPageCountAC(10))
+             dispatch(setCardsPacksCountFromRangeAC([0, 1000]))
             dispatch(redirectToLogin(true))
 
-           /* dispatch(setWithMyIdAC(true))
-            dispatch(changeLayoutAC("profile"))
-            dispatch(setSortPacksValueAC(""))*/
+            dispatch(setWithMyIdAC(true))
+           dispatch(changeLayoutAC("profile"))
+           //  dispatch(setSortPacksValueAC(""))
         })
         .catch((err) => {
             const error = err.response

@@ -3,17 +3,18 @@ import {useDispatch, useSelector} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {Navigate} from 'react-router-dom';
 import {RootStateType} from '../../bll/store';
-import {Register} from "../Routes/Routes"
+import {REGISTER_PATH} from "../Routes/Routes"
 import s from './LogIn.module.scss';
 import style from '../InitCommonStyle.module.css';
 import {Alert} from '@mui/material';
-//import {ErrorSnackbar} from '../../common/Error/ErrorSnackbar';
+import {ErrorSnackbar} from '../common/Error/ErrorSnackbar';
 import {signIn} from '../../bll/loginReducer';
+import {RECOVERY_PATH} from '../Routes/Routes'
 
 const Login = React.memo(() => {
-    const [email, setEmail] = useState('test1test@test.com');
-    const [password, setPassword] = useState('freetest');
-    const [rememberMe, setRememberMe] = useState(false);
+    const [email, setEmail] = useState('cards@test.com');
+    const [password, setPassword] = useState('Qwertyuiop123');
+    const [rememberMe, setRememberMe] = useState(true);
 
     const isInitialized = useSelector<RootStateType, boolean>((state) => state.app.isInitialized);
     const error = useSelector<RootStateType, string>((state) => state.login.error);
@@ -75,7 +76,7 @@ const Login = React.memo(() => {
                     </div>
                 </div>
                 <div>
-                    <NavLink className={s.linkTransparent} to={"#"}>
+                    <NavLink className={s.linkTransparent} to={RECOVERY_PATH}>
                         Forgot password
                     </NavLink>
                 </div>
@@ -85,11 +86,11 @@ const Login = React.memo(() => {
             </form>
             <p className={style.textLight}>Don't have an account?</p>
             <div>
-                <NavLink className={style.linkBlue} to={Register}>
+                <NavLink className={style.linkBlue} to={REGISTER_PATH}>
                     Sign Up
                 </NavLink>
             </div>
-            {/*<ErrorSnackbar/>*/}
+            <ErrorSnackbar/>
         </div>
     );
 });

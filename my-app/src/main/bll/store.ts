@@ -7,8 +7,8 @@ import { resetPasswordReducer } from "./resetPasswordReducer";
 import { createNewPasswordReducer } from "./createNewPasswordReducer";
 import { error404Reducer } from "./error404Reducer";
 import {appReducer} from "./appReducer";
-import {packsReducer} from "./api/paks-reducer";
-import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {packsReducer} from "./packsReducer";
+import {cardsReducer} from "./cardsReducer";
 
 
 
@@ -20,9 +20,8 @@ const rootReducer = combineReducers({
     createNewPassword: createNewPasswordReducer,
     error404: error404Reducer,
     app: appReducer,
-    packs:packsReducer,
+    packs: packsReducer,
+    cards: cardsReducer,
 });
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 export type RootStateType = ReturnType<typeof rootReducer>;
-export const useAppSelector: TypedUseSelectorHook<RootStateType> = useSelector
-export const useAppDispatch = () => useDispatch<typeof store.dispatch>()
