@@ -11,7 +11,8 @@ import {logOut} from '../../bll/loginReducer';
 import {RootStateType} from '../../bll/store';
 import {LinearProgress} from '@mui/material';
 import {RequestStatusType} from '../../bll/appReducer';
-
+import CardsImg from '../../../common/img/cards.png'
+import UserImg from '../../../common/img/cards.png'
 export const Header = React.memo(() => {
     const dispatch = useDispatch()
 
@@ -55,7 +56,7 @@ export const Header = React.memo(() => {
                                         // dispatch(setSortPacksValueAC(null))
                                         // setButtonActive('packs-list')
                                     }}>
-                                <img className={s.btnImg} src={'PackListIcon'} alt="PacksListIcon"/>
+                                <img className={s.btnImg} src={CardsImg} alt="PacksListIcon"/>
                                 <span>Packs List</span>
                             </button>
                         </NavLink>
@@ -72,7 +73,7 @@ export const Header = React.memo(() => {
                                         // dispatch(setSortPacksValueAC(null))
                                         // setButtonActive('profile')
                                     }}>
-                                <img className={s.btnImg} src={'ProfileIcon'} alt="ProfileIcon"/>
+                                <img className={s.btnImg} src={UserImg} alt="ProfileIcon"/>
                                 <span>Profile</span>
                             </button>
                         </NavLink>
