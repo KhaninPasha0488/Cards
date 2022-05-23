@@ -1,7 +1,7 @@
 import s from './Header.module.css';
-//import PackListIcon from './Cards.png'
-//import ProfileIcon from './Profile.png'
-import LogoutIcon from './Logout.png'
+import PackListIcon from '../image/PacksListImg.png'
+import ProfileIcon from '../image/ProfileImg.png'
+import LogoutIcon from '../image/Logout.png'
 import {NavLink} from 'react-router-dom';
 import {PACKS_LIST_PATH, PROFILE_PATH} from '../Routes/Routes';
 import React, {useEffect, useState} from 'react';
@@ -11,8 +11,7 @@ import {logOut} from '../../bll/loginReducer';
 import {RootStateType} from '../../bll/store';
 import {LinearProgress} from '@mui/material';
 import {RequestStatusType} from '../../bll/appReducer';
-import CardsImg from '../../../common/img/cards.png'
-import UserImg from '../../../common/img/cards.png'
+
 export const Header = React.memo(() => {
     const dispatch = useDispatch()
 
@@ -56,7 +55,7 @@ export const Header = React.memo(() => {
                                         // dispatch(setSortPacksValueAC(null))
                                         // setButtonActive('packs-list')
                                     }}>
-                                <img className={s.btnImg} src={CardsImg} alt="PacksListIcon"/>
+                                <img className={s.btnImg} src={PackListIcon} alt="PacksListIcon"/>
                                 <span>Packs List</span>
                             </button>
                         </NavLink>
@@ -73,7 +72,7 @@ export const Header = React.memo(() => {
                                         // dispatch(setSortPacksValueAC(null))
                                         // setButtonActive('profile')
                                     }}>
-                                <img className={s.btnImg} src={UserImg} alt="ProfileIcon"/>
+                                <img className={s.btnImg} src={ProfileIcon} alt="ProfileIcon"/>
                                 <span>Profile</span>
                             </button>
                         </NavLink>
@@ -86,7 +85,7 @@ export const Header = React.memo(() => {
                                     dispatch(logOut()as any)
                                 }}
                         >
-                            <img className={`${s.btnImg} ${s.btnLogout}`} src={LogoutIcon} alt="ProfileIcon"/>
+                            <img className={`${s.btnImg} ${s.btnLogout}`} src={LogoutIcon} alt="Logout"/>
                             <span>Logout</span>
                         </button>
                     </>
