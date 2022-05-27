@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CardsPage.module.css';
 import s from '../Table/Table.module.scss';
-import ArrowBackIcon from '../../image/ArrowBackIcon.svg';
+import ArrowBackIcon from '../../image/img.png';
 import {CardResponseType} from '../../../dal/cardsAPI';
 import {NavLink} from 'react-router-dom';
 import {PACKS_LIST_PATH, PROFILE_PATH} from '../../Routes/Routes';
@@ -42,7 +42,7 @@ export const CardsTable = React.memo((props: CardsPropsType) => {
                                         readonly
                                         emptyColor={'#D7D8EF'}
                                         transition
-                                        fillColor={'#092a61'}
+                                        fillColor={'#21268F'}
                                         size={20}
                                         ratingValue={card.grade * 20}
                                     />
@@ -57,7 +57,7 @@ export const CardsTable = React.memo((props: CardsPropsType) => {
                                                         props.deleteModeOn(card)
                                                     }}>Delete
                                             </button>
-                                            <button className={s.buttonWrapper} onClick={() => {
+                                            <button className={s.editButton} onClick={() => {
                                                 props.addUpdateOn(card)
                                             }}>Edit
                                             </button>
